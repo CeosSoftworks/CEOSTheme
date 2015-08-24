@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+#page-header {
+  position: relative;
+  background-color: #222;
+  color: #777;
+  padding-top: 45%;
+}
+
+#page-header .bg-img {
+  background-image: url("../imgs/header-background.jpg");
+}
+
+#page-header #page-header-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.4);
+}
+
+#page-header #page-header-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

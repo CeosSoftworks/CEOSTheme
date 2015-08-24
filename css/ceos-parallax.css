@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+.ceos-parallax {
+  position: relative;
+  overflow: hidden;
+}
+
+.ceos-parallax .bg-img {
+  position: absolute;
+  background: no-repeat center/cover scroll;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
