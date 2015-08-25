@@ -1,6 +1,6 @@
 ; (function() {
   "use strict"
   
-  var elements = document.getElementsByClassName('ceos-parallax');
+  var elements = __.get('.ceos-parallax');
   
 })();

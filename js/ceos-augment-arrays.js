@@ -1,3 +1,5 @@
+"use strict"
+
 var __ = ceosAugment = ceosAugment || {};
     __.array = __.array || {};
 
@@ -34,13 +36,93 @@ __.array.getHTMLElements = function (obj) {
 }
 
 /**
+ * Gets the first element of a collection.
+ * 
+ * @param Collection The collection to have the first element returned.
+ * @returns mixed The first element present inside the collection.
+ */
+__.array.first = function (list) {
+  var list = (list && list.length ? list : this);
+  return (list instanceof Array ? list[0] : list.toArray()[0]);
+}
+
+/**
+ * Gets the last element of a collection.
+ * 
+ * @param Collection The collection to have the last element returned.
+ * @returns mixed The last element present inside the collection.
+ */
+__.array.last = function (list) {
+  var list = (list && list.length ? list : this),
+      last = list.length - 1;
+  return (list instanceof Array ? list[last] : list.toArray()[last]);
+}
+
+/**
+ * Gets the first HTML element of a collection.
+ * 
+ * @param Collection The collection to have the first HTML element returned.
+ * @returns mixed The first HTML element present inside the collection.
+ */
+__.array.firstHTMLChild = function (list) {
+  var list = (list && list.length ? list : this);
+  
+  list = (list instanceof Array ? list : list.toArray());
+
+  for(var i = 0; i < list.length; i++) {
+    if(list[i] instanceof HTMLElement) {
+      return list[i];
+    }
+  }
+}
+
+/**
+ * Gets the last HTML element of a collection.
+ * 
+ * @param Collection The collection to have the last HTML element returned.
+ * @returns mixed The last HTML element present inside the collection.
+ */
+__.array.lastHTMLChild = function (list) {
+  var list = (list && list.length ? list : this),
+      last = list.length - 1;
+      
+  list = (list instanceof Array ? list : list.toArray());
+  
+  for(var i = list.length - 1; i >= 0; i--) {
+    if(list[i] instanceof HTMLElement) {
+      return list[i];
+    }
+  }
+}
+
+/**
  * Prototype hooking
  */
 ;(function() {
+  Array.prototype.first = __.array.first;
+  Array.prototype.last = __.array.last;
+  Array.prototype.firstHTMLChild = __.array.firstHTMLChild;
+  Array.prototype.lastHTMLChild = __.array.lastHTMLChild;
+  
   NodeList.prototype.getHTMLElements = __.array.getHTMLElements;
   NodeList.prototype.toArray = __.array.toArray;
+  NodeList.prototype.first = __.array.first;
+  NodeList.prototype.last = __.array.last;
+  NodeList.prototype.firstHTMLChild = __.array.firstHTMLChild;
+  NodeList.prototype.lastHTMLChild = __.array.lastHTMLChild;
+  
   HTMLCollection.prototype.toArray = __.array.toArray;
+  HTMLCollection.prototype.first = __.array.first;
+  HTMLCollection.prototype.last = __.array.last;
+  
   HTMLAllCollection.prototype.toArray = __.array.toArray;
+  HTMLAllCollection.prototype.first = __.array.first;
+  HTMLAllCollection.prototype.last = __.array.last;
+  
+  arguments.constructor.prototype.toArray = __.array.toArray;
+  arguments.constructor.prototype.first = __.array.first;
+  arguments.constructor.prototype.last = __.array.last;
+  
   Int8Array.prototype.toArray = __.array.toArray;
   Int16Array.prototype.toArray = __.array.toArray;
   Int32Array.prototype.toArray = __.array.toArray;

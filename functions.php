@@ -44,7 +44,7 @@ function enqueueScripts(){
 	wp_enqueue_style('bootstrap', "{$templateDir}/css/bootstrap.min.css");
 	wp_enqueue_style('main', "{$templateDir}/style.css");
 	wp_enqueue_style('header', "{$templateDir}/css/header.css");
-  wp_enqueue_style('ceos-parallax', "{$templateDir}/css/ceos-parallax.css");
+    wp_enqueue_style('ceos-parallax', "{$templateDir}/css/ceos-parallax.css");
 
 
 	wp_enqueue_script('bootstrap', "{$templateDir}/js/bootstrap.min.js");
