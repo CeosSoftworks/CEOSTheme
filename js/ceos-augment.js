@@ -254,8 +254,40 @@ __.remove = function () {
   }
 }
 
-__.removeAt = function (pos) {}
-__.removeExactlyAt = function (pos) {}
+/**
+ * 
+ * @returns {undefined}
+ */
+console.log('Documenting needed');
+__.removeAt = function () {
+  var args = arguments.toArray();
+  if(args.length === 1) {
+    args.unshift(null);
+  }
+  
+  var source = (args[0] instanceof Element ? args[0] : document.body),
+      target = args[1];
+  
+  source.removeChild(source.children[target]);
+}
+
+/**
+ * 
+ * @param {type} pos
+ * @returns {undefined}
+ */
+console.log('Documenting needed');
+__.removeExactlyAt = function () {
+  var args = arguments.toArray();
+  if(args.length === 1) {
+    args.unshift(null);
+  }
+  
+  var source = (args[0] instanceof Element ? args[0] : document.body),
+      target = args[1];
+  
+  source.removeChild(source.childNodes[target]);
+}
 __.replace = function (item, replacement) {}
 __.replaceAt = function (pos, replacement) {}
 __.replaceExactlyAt = function (pos, replacement) {}
