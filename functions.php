@@ -50,6 +50,7 @@ function enqueueScripts(){
 	wp_enqueue_script('bootstrap', "{$templateDir}/js/bootstrap.min.js");
 	wp_enqueue_script('main', "{$templateDir}/js/main.js");
 	wp_enqueue_script('ceos-augment', "{$templateDir}/js/ceos-augment.js");
+	wp_enqueue_script('ceos-augment-client', "{$templateDir}/js/ceos-augment-events.js");
 	wp_enqueue_script('ceos-augment-arrays', "{$templateDir}/js/ceos-augment-arrays.js");
 	wp_enqueue_script('ceos-augment-client', "{$templateDir}/js/ceos-augment-client.js");
 	wp_enqueue_script('ceos-parallax', "{$templateDir}/js/ceos-parallax.js");

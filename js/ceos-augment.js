@@ -295,7 +295,6 @@ __.switch = function (item1, item2) {}
 __.switchAt = function (pos1, pos2) {}
 __.switchExactlyAt = function (pos1, pos2) {}
 
-
 __.parents = function () {}
 __.parentsUntil = function () {}
 __.parentsSearch = function () {}
