@@ -160,6 +160,17 @@ __.prepend = function () {
   target.insertBefore(item, target.childNodes[0]);
 }
 
+__.pos = function () {
+  var args = arguments.toArray();
+  if(args.length === 1) {
+    args.unshift(null);
+  }
+}
+
+__.exactPos = function () {
+  
+}
+
 /**
  * Inserts a given element inside another element at a designated DOM position.
  * This procedure takes into account only the child nodes that come to be
@@ -213,6 +224,11 @@ __.insertExactlyAt = function () {
   
   target.insertBefore(item, target.childNodes[pos]);
 }
+
+__.insertBefore = function () {}
+__.insertExactlyBefore = function () {}
+__.insertAfter = function () {}
+__.insertExactlyAfter = function () {}
 
 /**
  * Removes one or many elements from the DOM.
